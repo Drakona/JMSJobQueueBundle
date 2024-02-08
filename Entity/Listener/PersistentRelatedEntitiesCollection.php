@@ -107,7 +107,7 @@ class PersistentRelatedEntitiesCollection implements Collection, Selectable, \St
      * @param integer|string $key
      * @return object|null The removed element or NULL, if no element exists for the given key.
      */
-    public function remove(int|string $key)
+    public function remove($key)
     {
         throw new \LogicException('remove() is not supported.');
     }
@@ -182,7 +182,7 @@ class PersistentRelatedEntitiesCollection implements Collection, Selectable, \St
      * @param mixed $key The key to check for.
      * @return boolean TRUE if the given key/index exists, FALSE otherwise.
      */
-    public function containsKey(string|int $key)
+    public function containsKey($key)
     {
         $this->initialize();
 
@@ -245,7 +245,7 @@ class PersistentRelatedEntitiesCollection implements Collection, Selectable, \St
      * @param mixed $key The key.
      * @return mixed The element or NULL, if no element exists for the given key.
      */
-    public function get(string|int $key)
+    public function get($key)
     {
         $this->initialize();
         return $this->entities[$key] ?? null;
@@ -298,7 +298,7 @@ class PersistentRelatedEntitiesCollection implements Collection, Selectable, \St
      * @param mixed $key
      * @param mixed $value
      */
-    public function set(string|int $key, mixed $value)
+    public function set($key, mixed $value)
     {
         throw new \LogicException('set() is not supported.');
     }
@@ -441,7 +441,7 @@ class PersistentRelatedEntitiesCollection implements Collection, Selectable, \St
      * @param int $length
      * @return array
      */
-    public function slice(int $offset, int|null $length = null)
+    public function slice($offset, $length = null)
     {
         $this->initialize();
 
